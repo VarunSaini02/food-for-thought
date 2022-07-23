@@ -1,13 +1,14 @@
 const router = require("express").Router();
-const { getRecipes, createRecipe, updateRecipe, deleteRecipe } = require("./controllers/recipe");
+const { getPosts, createPost, updatePost, deletePost } = require("./controllers/post");
 
 router.get("/", (req, res) => {
-    res.send("The Melting Pot backend is live!");
+    res.send("Pot melting...");
 });
 
-router.get("/recipes", getRecipes);
-router.post("/recipes", createRecipe);
-router.put("/recipes/:recipeID", updateRecipe);
-router.delete("/recipes/:recipeID", deleteRecipe);
+// router.get("/posts/:postID", getPost);
+router.get("/posts", getPosts);
+router.post("/posts", createPost);
+router.put("/posts/:postID", updatePost);
+router.delete("/posts/:postID", deletePost);
 
 module.exports = router;
