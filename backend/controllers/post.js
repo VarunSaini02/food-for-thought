@@ -10,6 +10,16 @@ const getPost = (req, res) => {
         });
 };
 
+const getPostLikes = (req, res) => {
+    Post.findOne({ _id: req.params.postID },
+        (err, post) => {
+            if (err) {
+                res.send(err);
+            }
+            res.json(post.likes);
+        });
+};
+
 const getPosts = (req, res) => {
     Post.find((err, posts) => {
         if (err) {
@@ -67,6 +77,7 @@ const deletePost = (req, res) => {
 
 module.exports = {
     getPost,
+    getPostLikes,
     getPosts,
     createPost,
     updatePost,
