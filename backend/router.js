@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { getRecipes, createRecipe, updateRecipe, deleteRecipe } = require("./controllers/recipe");
 
 router.get("/", (req, res) => {
-    res.send("Let's build a CRUD API!");
+    res.send("The Melting Pot backend is live!");
 });
 
 router.get("/recipes", getRecipes);
