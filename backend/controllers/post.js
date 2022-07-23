@@ -1,14 +1,14 @@
 const Post = require("../model/post");
 
-// const getPost = (req, res) => {
-//     Post.findOne((err, posts) => {
-//         { _id: req.params.postID },
-//         if (err) {
-//             res.send(err);
-//         }
-//         res.json(posts);
-//     });
-// };
+const getPost = (req, res) => {
+    Post.findOne({ _id: req.params.postID },
+        (err, post) => {
+            if (err) {
+                res.send(err);
+            }
+            res.json(post);
+        });
+};
 
 const getPosts = (req, res) => {
     Post.find((err, posts) => {
@@ -51,10 +51,10 @@ const updatePost = (req, res) => {
             },
         },
         { new: true },
-        (err, Post) => {
+        (err, post) => {
             if (err) {
                 res.send(err);
-            } else res.json(Post);
+            } else res.json(post);
         }
     );
 };
@@ -66,6 +66,7 @@ const deletePost = (req, res) => {
 };
 
 module.exports = {
+    getPost,
     getPosts,
     createPost,
     updatePost,
