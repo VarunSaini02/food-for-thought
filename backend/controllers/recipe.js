@@ -42,7 +42,7 @@ const updateRecipe = (req, res) => {
 };
 
 const deleteRecipe = (req, res) => {
-    Recipe.deleteOne({ _id: req.params.todoID })
+    Recipe.deleteOne({ _id: req.params.recipeID })
     .then(() => res.json({ message: "Recipe Deleted" }))
     .catch((err) => res.send(err));
 };
