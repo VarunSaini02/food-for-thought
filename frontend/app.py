@@ -64,19 +64,23 @@ def addPost(postDic):
 @app.route("/feed")
 def feed():
     posts = getPosts()
-    return render_template("Feed.html", posts = posts)
+    return render_template("Feed.html", posts =posts)
 
 @app.route("/make-a-post")
 def makeAPost():
     return render_template("Make-a-Post.html")
 
-@app.route("/handle-search", methods=["POST"])
+@app.route("/search", methods=["POST"])
 def handleSearch():
     body = {"query":request.form["search"]}
     results = search(body)
     if len(results)==0:
         return "No Results Found"
     return render_template("Feed.html", posts = results)
+
+@app.route("/")
+def home():
+    return feed()
 
 
 if __name__ == "__main__":
