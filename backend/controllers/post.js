@@ -39,6 +39,7 @@ const getPosts = (req, res) => {
 const createPost = (req, res) => {
     const post = new Post({
         title: req.body.title,
+        name: req.body.name,
         date: req.body.date,
         caption: req.body.caption,
         recipe: req.body.recipe,
@@ -60,6 +61,7 @@ const updatePost = (req, res) => {
         {
             $set: {
                 title: req.body.title,
+                name: req.body.name,
                 date: req.body.date,
                 caption: req.body.caption,
                 recipe: req.body.recipe,

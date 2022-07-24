@@ -38,6 +38,10 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    name: {
+        type: String,
+        default: "Anonymous"
+    },
     date: {
         type: Date,
         default: Date.now,
