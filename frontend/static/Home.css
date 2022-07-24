@@ -287,7 +287,7 @@
 .u-section-3 .u-icon-2 {
   height: 64px;
   width: 64px;
-  margin: 30px auto 0;
+  margin: 0 auto;
 }
 
 .u-section-3 .u-text-3 {
@@ -297,7 +297,7 @@
 
 .u-section-3 .u-text-4 {
   font-size: 0.875rem;
-  margin: 20px 30px 30px;
+  margin: 20px 30px 0;
 }
 
 .u-section-3 .u-layout-cell-3 {
@@ -308,7 +308,7 @@
 .u-section-3 .u-icon-3 {
   height: 64px;
   width: 64px;
-  margin: 30px auto 0;
+  margin: 0 auto;
 }
 
 .u-section-3 .u-text-5 {
@@ -318,7 +318,7 @@
 
 .u-section-3 .u-text-6 {
   font-size: 0.875rem;
-  margin: 20px 30px 30px;
+  margin: 20px 30px 0;
 }
 
 .u-section-3 .u-layout-cell-4 {
@@ -329,7 +329,7 @@
 .u-section-3 .u-icon-4 {
   height: 64px;
   width: 64px;
-  margin: 30px auto 0;
+  margin: 0 auto;
 }
 
 .u-section-3 .u-text-7 {
@@ -339,7 +339,7 @@
 
 .u-section-3 .u-text-8 {
   font-size: 0.875rem;
-  margin: 20px 30px 30px;
+  margin: 20px 30px 0;
 }
 
 .u-section-3 .u-layout-cell-5 {
@@ -350,7 +350,7 @@
 .u-section-3 .u-icon-5 {
   height: 64px;
   width: 64px;
-  margin: 30px auto 0;
+  margin: 0 auto;
 }
 
 .u-section-3 .u-text-9 {
@@ -360,7 +360,7 @@
 
 .u-section-3 .u-text-10 {
   font-size: 0.875rem;
-  margin: 20px 30px 30px;
+  margin: 20px 30px 0;
 }
 
 .u-section-3 .u-layout-cell-6 {
@@ -371,7 +371,7 @@
 .u-section-3 .u-icon-6 {
   height: 64px;
   width: 64px;
-  margin: 30px auto 0;
+  margin: 0 auto;
 }
 
 .u-section-3 .u-text-11 {
@@ -381,7 +381,7 @@
 
 .u-section-3 .u-text-12 {
   font-size: 0.875rem;
-  margin: 20px 30px 30px;
+  margin: 20px 30px 0;
 }
 
 @media (max-width: 1199px) {
@@ -672,7 +672,6 @@
 .u-section-4 .u-group-elements-1 {
   width: 468px;
   min-height: 181px;
-  height: auto;
   margin: 0 auto;
 }
 
@@ -701,6 +700,10 @@
   .u-section-4 .u-layout-wrap-1 {
     margin-right: initial;
     margin-left: initial;
+  }
+
+  .u-section-4 .u-group-elements-1 {
+    height: auto;
   }
 }
 
@@ -735,7 +738,6 @@
 .u-section-5 .u-group-elements-1 {
   width: 461px;
   min-height: 128px;
-  height: auto;
   margin: 0 auto;
 }
 
@@ -759,6 +761,10 @@
   .u-section-5 .u-layout-wrap-1 {
     margin-right: initial;
     margin-left: initial;
+  }
+
+  .u-section-5 .u-group-elements-1 {
+    height: auto;
   }
 }
 

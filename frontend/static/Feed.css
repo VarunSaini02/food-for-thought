@@ -63,6 +63,7 @@
 
 .u-section-1 .u-text-5 {
   font-weight: 700;
+  line-height: 1.8;
   margin: 28px 29px 0;
 }
 
@@ -102,6 +103,7 @@
 
 .u-section-1 .u-text-9 {
   font-weight: 700;
+  line-height: 1.8;
   margin: 28px 29px 0;
 }
 
@@ -172,7 +174,6 @@
   }
 
   .u-section-1 .u-text-5 {
-    line-height: 1.8;
     margin-left: 0;
     margin-right: 0;
   }
@@ -204,7 +205,6 @@
   }
 
   .u-section-1 .u-text-9 {
-    line-height: 1.8;
     margin-left: 0;
     margin-right: 0;
   }
