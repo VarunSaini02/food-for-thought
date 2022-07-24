@@ -51,8 +51,6 @@
                 <a href="{{ url_for('postPage', id=post['_id'])}}" data-page-id="214999321" class="u-btn u-button-style u-palette-3-base u-btn-1">View post</a>
                 <p class="u-text u-text-palette-3-base u-text-3"><span class="u-file-icon u-icon u-text-palette-3-base"><img src="{{url_for('static', filename='comment.png')}}" alt=""></span>&nbsp;{{post['comments']|length}}
                 </p>
-                <p class="u-text u-text-palette-3-base u-text-4"><span class="u-file-icon u-icon u-text-palette-3-base"><img src="{{url_for('static', filename='like.png')}}" alt=""></span>&nbsp;{{post['likes']}}
-                </p>
               </div>
             </div>
             {% endfor %}

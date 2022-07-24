@@ -161,6 +161,21 @@ def handleSearch():
         return "No Results Found"
     return render_template("Feed.html", posts=results)
 
+@app.route("/posting-comment/<id>", methods=["POST"])
+def handleComment(id):
+    body = {
+        "user": request.form["name"],
+        "text": request.form["message"]
+    }
+    comments = getPost(id)['comments']
+    print(comments)
+    comments.append(body)
+    print(comments)
+    json = {"comments": comments}
+    print(json)
+    URL = "https://melting-pot-backend.herokuapp.com/posts/"+id
+    r = requests.put(url=URL, json=json)
+    return redirect(url_for('postPage', id=id))
 
 @app.route("/")
 def home():
@@ -169,7 +184,17 @@ def home():
 @app.route("/postPage/<id>")
 def postPage(id):
     post = getPost(id)
-    return render_template("Post-1.html", post=post)
+    ingredientsList = []
+    for i in range(0,len(post['recipe']['ingredients'])):
+        servingNum = post['recipe']['ingredients'][i]['amount']
+        servingUnit = post['recipe']['ingredients'][i]['unit']
+        ingredient = post['recipe']['ingredients'][i]['name']
+        ingredientsStr = str(servingNum)+ " " + servingUnit + " " + ingredient
+        ingredientsList.append(ingredientsStr)
+    directionsList = []
+    for i in range(0,len(post['recipe']['steps'])):
+        directionsList.append(post['recipe']['steps'][i])
+    return render_template("PostPage.html", post=post, ingredientsList=ingredientsList, directionsList=directionsList)
 
 
 if __name__ == "__main__":
