@@ -28,3 +28,9 @@ Temporary Items
 # Node.js
 node_modules
 .env
+
+# Images
+tempImgs/*
+tempImgs
+posts-imgs/*
+posts-imgs

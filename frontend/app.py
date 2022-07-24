@@ -1,7 +1,33 @@
 from flask import Flask, render_template, request, url_for, redirect
-import requests
+from werkzeug.utils import secure_filename
+from base64 import b64encode, decodebytes, encode
+import requests, os
+
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = "tempImgs"
+
+def download_specific_image(id):
+    print("Getting specific image...")
+    URL = "https://melting-pot-backend.herokuapp.com/posts/" + id
+    r = requests.get(url=URL)
+    post = r.json()
+    encoded_img = post["image"].encode()
+    path = "static/posts-imgs/" + str(post["_id"]) + "." + post["ext"]
+    with open(path,"wb") as f:
+        f.write(decodebytes(encoded_img))
+
+def get_all_imgs():
+    print("Getting images...")
+    URL = "https://melting-pot-backend.herokuapp.com/posts"
+    r = requests.get(url=URL)
+    json = r.json()
+    for post in json:
+        encoded_img = post["image"].encode()
+        path = "static/posts-imgs/" + str(post["_id"]) + "." + post["ext"]
+        with open(path,"wb") as f:
+            f.write(decodebytes(encoded_img))
 
 
 def ingredientsToList(ingStr: str):
@@ -85,6 +111,7 @@ def addPost(postDic):
 
 @app.route("/feed")
 def feed():
+    get_all_imgs
     posts = getPosts()
     return render_template("Feed.html", posts=posts)
 
@@ -96,6 +123,17 @@ def makeAPost():
 
 @app.route("/making-a-post", methods=["POST"])
 def makingAPost():
+    file = request.files['file']
+    filename = secure_filename(file.filename)
+    temp_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    file.save(temp_path)
+
+    ext = filename[-6:].split(".")[-1]
+    encoded_string = ""
+
+    with open(temp_path, "rb") as image_file:
+        encoded_string = b64encode(image_file.read()).decode('utf-8')
+
     body = {
         "title": request.form["name"],
         "name": request.form["text-3"],
@@ -105,11 +143,14 @@ def makingAPost():
             "ingredients": ingredientsToList(request.form["textarea"]),
             "servingSize": request.form["text-1"],
             "steps": directionsToList(request.form["text"])
-        }
+        },
+        "image": encoded_string,     
+        "ext": ext
     }
     r = addPost(body)
     id = r.json()["_id"]
-    return postPage(id)
+    download_specific_image(id)
+    return redirect(url_for('postPage', id=id))
 
 
 @app.route("/search", methods=["POST"])
@@ -125,7 +166,6 @@ def handleSearch():
 def home():
     return render_template("Home.html")
 
-
 @app.route("/postPage/<id>")
 def postPage(id):
     post = getPost(id)
@@ -133,4 +173,5 @@ def postPage(id):
 
 
 if __name__ == "__main__":
+    get_all_imgs()
     app.run(host='0.0.0.0', debug=True, port=3000)

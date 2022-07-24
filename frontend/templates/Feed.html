@@ -46,7 +46,7 @@
             <div class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white">
               <div class="u-container-layout u-similar-container u-container-layout-1">
                 <h4 class="u-custom-font u-text u-text-font u-text-1">{{post['title']}}</h4>
-                <img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1200" data-image-height="750" src="{{url_for('static', filename='7de33e0b3b5a270c4ed54706cd2a70f8.jpeg')}}">
+                <img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1200" data-image-height="750" src="{{ url_for('static', filename=('posts-imgs/' + post['_id'] + '.' + post['ext'])) }}">
                 <p class="u-text u-text-2">{{post['caption']}}</p>
                 <a href="{{ url_for('postPage', id=post['_id'])}}" data-page-id="214999321" class="u-btn u-button-style u-palette-3-base u-btn-1">View post</a>
                 <p class="u-text u-text-palette-3-base u-text-3"><span class="u-file-icon u-icon u-text-palette-3-base"><img src="{{url_for('static', filename='comment.png')}}" alt=""></span>&nbsp;{{post['comments']|length}}
