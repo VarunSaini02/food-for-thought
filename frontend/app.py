@@ -84,8 +84,7 @@ def home():
 
 @app.route("/postPage")
 def postPage():
-    return feed()
-
+    return render_template("Post-1.html")
 
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', debug=True, port = 3000)
