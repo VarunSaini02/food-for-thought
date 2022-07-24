@@ -45,7 +45,8 @@ const createPost = (req, res) => {
         recipe: req.body.recipe,
         likes: req.body.likes,
         comments: req.body.comments,
-        image: req.body.image
+        image: req.body.image,
+        ext: req.body.ext
     });
 
     post.save((err, post) => {
@@ -68,7 +69,8 @@ const updatePost = (req, res) => {
                 recipe: req.body.recipe,
                 likes: req.body.likes,
                 comments: req.body.comments,
-                image: req.body.image
+                image: req.body.image,
+                ext: req.body.ext
             },
         },
         { new: true },

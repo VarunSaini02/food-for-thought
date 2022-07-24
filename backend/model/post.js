@@ -60,6 +60,7 @@ const PostSchema = new mongoose.Schema({
     },
     comments: [CommentSchema],
     image: String,
+    ext: String,
 });
 
 module.exports = mongoose.model("Post", PostSchema);
