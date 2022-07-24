@@ -6,6 +6,9 @@ By Kevin Yin, Helen Nguyen, and Varun Saini
 
 Back-end is hosted [here](https://melting-pot-backend.herokuapp.com/).
 
+## Run Application
+To run the main application, navigate to the [frontend](/frontend) directory and run `python3 app.py`.
+
 
 ## Inspiration
 We are _huge_ foodies but college has made us realize that nothing beats a homecooked meal. Family recipes are _top-tier_, which is why we wanted to create Melting Pot to share these delicious dishes. 
