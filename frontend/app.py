@@ -66,7 +66,7 @@ def getPost(id):
 
 def addPost(postDic):
     URL = "https://melting-pot-backend.herokuapp.com/posts"
-    r = requests.post(url=URL, json=postDic)
+    return requests.post(url=URL, json=postDic)
 
 
 def search(body):
