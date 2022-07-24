@@ -80,7 +80,8 @@ def handleSearch():
 
 @app.route("/")
 def home():
-    return feed()
+    return render_template("Home.html", posts = results)
+#    return feed()
 
 @app.route("/postPage")
 def postPage():
