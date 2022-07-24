@@ -64,7 +64,7 @@ def addPost(postDic):
 @app.route("/feed")
 def feed():
     posts = getPosts()
-    return render_template("Feed.html", posts =posts)
+    return render_template("Feed.html", posts = posts)
 
 @app.route("/make-a-post")
 def makeAPost():

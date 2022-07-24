@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Feed</title>
+    <title>Feed 1 Row</title>
     <link rel="stylesheet" href="../static/nicepage.css" media="screen">
-<link rel="stylesheet" href="../static/Feed.css" media="screen">
+<link rel="stylesheet" href="../static/Feed-1-Row.css" media="screen">
     <script class="u-script" type="text/javascript" src="../scripts/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../scripts/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 4.14.1, nicepage.com">
@@ -20,14 +20,14 @@
 		"logo": "images/ScreenShot2022-07-23at3.46.56PM.png"
 }</script>
     <meta name="theme-color" content="#478ac9">
-    <meta property="og:title" content="Feed">
+    <meta property="og:title" content="Feed 1 Row">
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-align-center-xs u-border-1 u-border-grey-25 u-clearfix u-header u-header" id="sec-9b2b"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="/" class="u-image u-logo u-image-1" data-image-width="1656" data-image-height="404">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1656" data-image-height="404">
           <img src="{{url_for('static', filename='ScreenShot2022-07-23at3.46.56PM.png')}}" class="u-logo-image u-logo-image-1">
         </a>
-        <form action="{{url_for('handleSearch')}}" method="post" class="u-border-1 u-border-grey-15 u-search u-search-right u-search-1">
+        <form action="#" method="get" class="u-border-1 u-border-grey-15 u-search u-search-right u-search-1">
           <button class="u-search-button" type="submit">
             <span class="u-search-icon u-spacing-10 u-text-grey-40">
               <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b04b"></use></svg>
@@ -36,7 +36,7 @@
           </button>
           <input class="u-search-input" type="search" name="search" value="" placeholder="Search">
         </form>
-        <nav class="u-align-left u-menu u-menu-one-level u-nav-spacing-25 u-offcanvas u-menu-1">
+        <nav class="u-align-left u-menu u-menu-one-level u-nav-spacing-25 u-offcanvas u-menu-1" data-position="Menu">
           <div class="menu-collapse">
             <a class="u-button-style u-custom-text-active-color u-nav-link" href="#" style="padding: 4px 0px; font-size: calc(1em + 8px);">
               <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 302 302" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7b92"></use></svg>
@@ -53,7 +53,7 @@
             <div class="u-align-center u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
               <div class="u-inner-container-layout u-sidenav-overflow">
                 <div class="u-menu-close"></div>
-                <ul class="u-align-center u-fnav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
 </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Feed.html">Feed</a>
 </li></ul>
               </div>
@@ -63,17 +63,16 @@
         </nav>
         <a href="{{ url_for('makeAPost')}}" data-page-id="28042646" class="u-border-none u-btn u-button-style u-hover-palette-3-dark-1 u-palette-3-base u-btn-1">Make a Post</a>
       </div></header>
-    <section class="u-clearfix u-grey-5 u-section-1" id="sec-2ff6">
-      <div class="u-clearfix u-sheet u-sheet-1">
+    <section class="u-align-center u-clearfix u-grey-5 u-section-1" id="sec-2ff6">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-expanded-width u-list u-list-1">
           <div class="u-repeater u-repeater-1">
-            {%for post in posts%}
-            <div class="u-container-style u-list-item u-repeater-item u-video-cover u-white">
+            {% for post in posts %}
+            <div class="u-align-center u-container-style u-list-item u-repeater-item u-video-cover u-white">
               <div class="u-container-layout u-similar-container u-container-layout-1">
-                <h3 class="u-custom-font u-text u-text-default u-text-font u-text-1">{{post['title']}}</h3>
-                <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-1"></div>
+                <h4 class="u-custom-font u-text u-text-font u-text-1">{{post['title']}}</h4>
                 <img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1200" data-image-height="750" src="{{url_for('static', filename='7de33e0b3b5a270c4ed54706cd2a70f8.jpeg')}}">
-                <p class="u-text u-text-2"> {{post['caption']}}</p>
+                <p class="u-text u-text-2"> Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
                 <a href="Post-1.html" data-page-id="214999321" class="u-btn u-button-style u-palette-3-base u-btn-1">View post</a>
                 <p class="u-text u-text-palette-3-base u-text-3"><span class="u-file-icon u-icon u-text-palette-3-base"><img src="{{url_for('static', filename='comment.png')}}" alt=""></span>&nbsp;{{post['comments']|length}}
                 </p>
@@ -81,16 +80,22 @@
                 </p>
               </div>
             </div>
-            {%endfor%}
-            </div>
+            {% endfor %}
           </div>
         </div>
       </div>
     </section>
     
     
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-9976"><div class="u-clearfix u-sheet u-sheet-1">
-        <p class="u-small-text u-text u-text-variant u-text-1">Melting Pot</p>
+    <footer class="u-align-center u-clearfix u-custom-color-2 u-footer u-footer" id="sec-9976"><div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1026" data-image-height="243">
+          <img src="{{url_for('static', filename='ScreenShot2022-07-23at8.53.08PM-removebg-preview.jpg')}}" class="u-logo-image u-logo-image-1">
+        </a>
       </div></footer>
+
+    </section><span style="height: 64px; width: 64px; margin-left: 0px; margin-right: auto; margin-top: 0px; background-image: none; right: 20px; bottom: 20px; padding: 15px;" class="u-back-to-top u-grey-5 u-icon u-icon-circle u-opacity u-opacity-85" data-href="#">
+        <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 551.13 551.13"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1d98"></use></svg>
+        <svg class="u-svg-content" enable-background="new 0 0 551.13 551.13" viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg" id="svg-1d98"><path d="m275.565 189.451 223.897 223.897h51.668l-275.565-275.565-275.565 275.565h51.668z"></path></svg>
+    </span>
   
 </body></html>
