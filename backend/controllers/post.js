@@ -10,13 +10,20 @@ const getPost = (req, res) => {
         });
 };
 
-const getPostLikes = (req, res) => {
-    Post.findOne({ _id: req.params.postID },
-        (err, post) => {
+const getMatchingPosts = (req, res) => {
+    Post.find(
+        {$or: [
+            {
+                "recipe.name": { "$regex": req.body.query, "$options": "i" }
+            },
+            { title : { "$regex": req.body.query, "$options": "i" }},
+            { caption : { "$regex": req.body.query, "$options": "i" }},
+        ]},
+        (err, posts) => {
             if (err) {
                 res.send(err);
             }
-            res.json(post.likes);
+            res.json(posts);
         });
 };
 
@@ -77,7 +84,7 @@ const deletePost = (req, res) => {
 
 module.exports = {
     getPost,
-    getPostLikes,
+    getMatchingPosts,
     getPosts,
     createPost,
     updatePost,
