@@ -26,6 +26,13 @@ def getPosts():
     data = r.json()
     return data
 
+def getPost(id):
+    URL = "https://melting-pot-backend.herokuapp.com/posts"
+    URL = URL + "/" + id
+    r = requests.get(url = URL)
+    data = r.json()
+    return data
+
 def addPost(postDic):
     URL = "https://melting-pot-backend.herokuapp.com/posts"
     r = requests.post(url = URL, json = postDic)
@@ -104,9 +111,10 @@ def handleSearch():
 def home():
     return render_template("Home.html")
 
-@app.route("/postPage")
-def postPage():
-    return render_template("Post-1.html")
+@app.route("/postPage/<id>")
+def postPage(id):
+    post = getPost(id)
+    return render_template("Post-1.html", post=post)
 
 if __name__ == "__main__":
     app.run(host = '0.0.0.0', debug=True, port = 3000)
