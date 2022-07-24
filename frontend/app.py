@@ -43,17 +43,7 @@ postDic = {
             "Let cool",
             "Enjoy!"
         ]
-    },
-    "comments": [
-        {
-            "user": "Kevin",
-            "text": "These are delicious"
-        },
-        {
-            "user": "Helen",
-            "text": "Yum :)"
-        }
-    ]
+    }
 }
 
 def addPost(postDic):
@@ -69,6 +59,21 @@ def feed():
 @app.route("/make-a-post")
 def makeAPost():
     return render_template("Make-a-Post.html")
+
+@app.route("/making-a-post", methods=["POST"])
+def makingAPost():
+    body = {
+    "title":request.form["name"],
+    "name": request.form["text-3"],
+    "caption": request.form["message"],
+    "recipe": {
+        "name": request.form["name"],
+        "ingredients" : request.form["textarea"],
+        "servingSize": request.form["text-1"],
+        "steps": request.form["text"]
+    }
+    }
+    return body
 
 @app.route("/search", methods=["POST"])
 def handleSearch():

@@ -77,7 +77,7 @@
     <div class="u-align-left u-clearfix u-sheet u-sheet-1">
       <h4 class="u-custom-font u-text u-text-default u-text-font u-text-1">Post a Recipe</h4>
       <div class="u-form u-grey-5 u-form-1">
-        <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom"
+        <form action="{{url_for('makingAPost')}}" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="custom"
           name="form" style="padding: 10px;">
           <div class="u-form-group u-form-group-1">
             <label for="text-0bab" class="u-label">Name</label>
@@ -107,17 +107,17 @@
           </div>
           <div class="u-form-group u-form-message u-form-group-6">
             <label for="text-c984" class="u-label">Directions</label>
-            <textarea placeholder="Enter a list of directions" id="text-c984" name="text"
+            <textarea placeholder="Enter a list of directions split by line" id="text-c984" name="text"
               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white"></textarea>
           </div>
           <div class="u-form-group u-form-group-7">
             <label for="text-9eeb" class="u-label">Upload an Image</label>
-            <input type="text" placeholder="Select image" id="text-9eeb" name="text-2"
+            <input type="file" accept="image/*" id="text-9eeb" name="text-2"
               class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white">
           </div>
           <div class="u-align-right u-form-group u-form-submit">
-            <a href="#" class="u-btn u-btn-submit u-button-style u-palette-3-base u-btn-1">Post<br>
-            </a>
+            <button href="{{url_for('makingAPost')}}" class="u-btn u-btn-submit u-button-style u-palette-3-base u-btn-1" type="submit">Post<br>
+            </button>
             <input type="submit" value="submit" class="u-form-control-hidden">
           </div>
           <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
