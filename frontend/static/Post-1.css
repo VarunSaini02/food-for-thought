@@ -130,22 +130,6 @@
   vertical-align: 0px;
 }
 
-input[type=checkbox] {
-  display: none;
-}
-.label {
-  border: 0px solid #000;
-  display: inline-block;
-  padding: 3px;
-  background: url("833300.png") no-repeat left center;
-  padding-left: 15px;
-}
-input[type=checkbox]:checked + .label {
-  background: #fff;
-  color: #fff;
-  background-image: url("1077086.png");
-}
-
 .u-section-1 .u-text-7 {
   font-size: 1.25rem;
   margin: -32px 885px 0 197px;
