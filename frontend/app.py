@@ -85,9 +85,9 @@ def makingAPost():
     "caption": request.form["message"],
     "recipe": {
         "name": request.form["name"],
-        "ingredients" : request.form["textarea"],
+        "ingredients" : ingredientsToList(request.form["textarea"]),
         "servingSize": request.form["text-1"],
-        "steps": request.form["text"]
+        "steps": directionsToList(request.form["text"])
     }
     }
     return body
