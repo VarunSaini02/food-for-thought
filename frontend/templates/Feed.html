@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../static/Feed.css" media="screen">
     <script class="u-script" type="text/javascript" src="../scripts/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../scripts/nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 4.14.1, nicepage.com">
+    
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
@@ -24,10 +24,10 @@
     <meta property="og:type" content="website">
   </head>
   <body class="u-body u-xl-mode" data-lang="en"><header class="u-align-center-xs u-border-1 u-border-grey-25 u-clearfix u-header u-header" id="sec-9b2b"><div class="u-clearfix u-sheet u-sheet-1">
-        <a href="Home.html" data-page-id="776920649" class="u-image u-logo u-image-1" data-image-width="1656" data-image-height="404" title="Home">
+        <a href="{{ url_for('home')}}" data-page-id="776920649" class="u-image u-logo u-image-1" data-image-width="1656" data-image-height="404" title="Home">
           <img src="{{url_for('static', filename='ScreenShot2022-07-23at3.46.56PM.png')}}" class="u-logo-image u-logo-image-1">
         </a>
-        <form action="#" method="get" class="u-border-1 u-border-grey-15 u-search u-search-right u-search-1">
+        <form action="{{url_for('handleSearch')}}" method="post" class="u-border-1 u-border-grey-15 u-search u-search-right u-search-1">
           <button class="u-search-button" type="submit">
             <span class="u-search-icon u-spacing-10 u-text-grey-40">
               <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b04b"></use></svg>
@@ -48,10 +48,10 @@
                 <h4 class="u-custom-font u-text u-text-font u-text-1">{{post['title']}}</h4>
                 <img alt="" class="u-expanded-width u-image u-image-default u-image-1" data-image-width="1200" data-image-height="750" src="{{url_for('static', filename='7de33e0b3b5a270c4ed54706cd2a70f8.jpeg')}}">
                 <p class="u-text u-text-2">{{post['caption']}}</p>
-                <a href="Post-1.html" data-page-id="214999321" class="u-btn u-button-style u-palette-3-base u-btn-1">View post</a>
+                <a href="{{ url_for('postPage')}}" data-page-id="214999321" class="u-btn u-button-style u-palette-3-base u-btn-1">View post</a>
                 <p class="u-text u-text-palette-3-base u-text-3"><span class="u-file-icon u-icon u-text-palette-3-base"><img src="{{url_for('static', filename='comment.png')}}" alt=""></span>&nbsp;{{post['comments']|length}}
                 </p>
-                <p class="u-text u-text-palette-3-base u-text-4"><span class="u-file-icon u-icon u-text-palette-3-base"><img src="{{url_for('static', filename='like.png')}}" alt=""></span>&nbsp;{{post['like']}}
+                <p class="u-text u-text-palette-3-base u-text-4"><span class="u-file-icon u-icon u-text-palette-3-base"><img src="{{url_for('static', filename='like.png')}}" alt=""></span>&nbsp;{{post['likes']}}
                 </p>
               </div>
             </div>
@@ -63,7 +63,7 @@
     
     
     <footer class="u-align-center u-clearfix u-custom-color-2 u-footer u-footer" id="sec-9976"><div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1026" data-image-height="243">
+        <a href="/" class="u-image u-logo u-image-1" data-image-width="1026" data-image-height="243">
           <img src="{{url_for('static', filename='ScreenShot2022-07-23at8.53.08PM-removebg-preview.jpg')}}" class="u-logo-image u-logo-image-1">
         </a>
       </div></footer>
