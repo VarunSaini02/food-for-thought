@@ -31,4 +31,6 @@ node_modules
 
 # Images
 tempImgs/*
+tempImgs
 posts-imgs/*
+posts-imgs
