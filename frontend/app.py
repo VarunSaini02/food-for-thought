@@ -3,6 +3,23 @@ import requests
 
 app = Flask(__name__)
 
+def ingredientsToList(ingStr: str):
+    ingredients = []
+    lines = ingStr.split("\r\n")
+    for line in lines:
+        elements = line.split(", ")
+        ingredient = {
+            "name": elements[0],
+            "amount": elements[1].split(" ")[0],
+            "unit": elements[1].split(" ")[1]
+        }
+        ingredients.append(ingredient)
+    return ingredients
+
+def directionsToList(ingStr: str):
+    directions = []
+    return ingStr.split("\r\n")
+
 def getPosts():
     URL = "https://melting-pot-backend.herokuapp.com/posts"
     r = requests.get(url = URL)
