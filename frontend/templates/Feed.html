@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="../static/Feed.css" media="screen">
     <script class="u-script" type="text/javascript" src="../scripts/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../scripts/nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 4.14.1, nicepage.com">
+    
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     
     
@@ -27,7 +27,7 @@
         <a href="Home.html" data-page-id="776920649" class="u-image u-logo u-image-1" data-image-width="1656" data-image-height="404" title="Home">
           <img src="{{url_for('static', filename='ScreenShot2022-07-23at3.46.56PM.png')}}" class="u-logo-image u-logo-image-1">
         </a>
-        <form action="#" method="get" class="u-border-1 u-border-grey-15 u-search u-search-right u-search-1">
+        <form action="{{url_for('handleSearch')}}" method="post" class="u-border-1 u-border-grey-15 u-search u-search-right u-search-1">
           <button class="u-search-button" type="submit">
             <span class="u-search-icon u-spacing-10 u-text-grey-40">
               <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 56.966 56.966" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-b04b"></use></svg>
@@ -63,7 +63,7 @@
     
     
     <footer class="u-align-center u-clearfix u-custom-color-2 u-footer u-footer" id="sec-9976"><div class="u-align-left u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <a href="https://nicepage.com" class="u-image u-logo u-image-1" data-image-width="1026" data-image-height="243">
+        <a href="/" class="u-image u-logo u-image-1" data-image-width="1026" data-image-height="243">
           <img src="{{url_for('static', filename='ScreenShot2022-07-23at8.53.08PM-removebg-preview.jpg')}}" class="u-logo-image u-logo-image-1">
         </a>
       </div></footer>
