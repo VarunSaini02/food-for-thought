@@ -14,7 +14,7 @@ def download_specific_image(id):
     r = requests.get(url=URL)
     post = r.json()
     encoded_img = post["image"].encode()
-    path = "static/posts-imgs/" + str(post["_id"]) + "." + post["ext"]
+    path = "static/" + str(post["_id"]) + "." + post["ext"]
     with open(path,"wb") as f:
         f.write(decodebytes(encoded_img))
 
@@ -25,7 +25,7 @@ def get_all_imgs():
     json = r.json()
     for post in json:
         encoded_img = post["image"].encode()
-        path = "static/posts-imgs/" + str(post["_id"]) + "." + post["ext"]
+        path = "static/" + str(post["_id"]) + "." + post["ext"]
         with open(path,"wb") as f:
             f.write(decodebytes(encoded_img))
 

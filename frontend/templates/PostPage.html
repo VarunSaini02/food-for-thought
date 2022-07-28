@@ -59,7 +59,7 @@
                 src="">
                 <div class="u-container-layout u-container-layout-1">
                   <img class="u-image u-image-1" data-image-width="1200" data-image-height="750"
-                    src="{{ url_for('static', filename=('posts-imgs/' + post['_id'] + '.' + post['ext'])) }}">
+                    src="{{ url_for('static', filename=(post['_id'] + '.' + post['ext'])) }}">
                   <p class="u-text u-text-palette-3-base u-text-1"><span
                       class="u-file-icon u-icon u-text-palette-3-base u-icon-1"><img
                         src="{{url_for('static', filename='comment.png')}}" alt=""></span>&nbsp;{{post['comments']|length}}
